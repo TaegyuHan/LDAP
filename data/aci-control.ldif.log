@@ -1,0 +1,26 @@
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2023-11-29T23:16:13.516
+#!ERROR  [LDAP result code 21 - invalidAttributeSyntax] INVALID_ATTRIBUTE_SYNTAX: failed for MessageType : ADD_REQUEST Message ID : 72     Add Request : Entry     dn: cn=enableSearchForAllUsers,dc=example,dc=com     objectClass: top     objectClass: subentry     objectClass: accessControlSubentry     prescriptiveACI:      subtreeSpecification: {}     }: UNKNOWN     {   identificationTag "enableSearchForAllUsers",  precedence 14,  authenticationLevel simple,  itemOrUserFirst userFirst:   {     userClasses { allUsers },     userPermissions     {       {          protectedItems {entry, allUserAttributeTypesAndValues}          grantsAndDenials { grantRead, grantReturnDN, grantBrowse }    }  }: UNKNOWN : ERR_13246_INVALID_VALUE_PER_SYNTAX Invalid upValue per syntax
+dn: cn=enableSearchForAllUsers,dc=example,dc=com
+objectClass: top
+objectClass: subentry
+objectClass: accessControlSubentry
+subtreeSpecification: {}
+prescriptiveACI: 
+{ 
+  identificationTag "enableSearchForAllUsers",
+  precedence 14,
+  authenticationLevel simple,
+  itemOrUserFirst userFirst: 
+  { 
+    userClasses { allUsers }, 
+    userPermissions 
+    { 
+      {
+          protectedItems {entry, allUserAttributeTypesAndValues}
+          grantsAndDenials { grantRead, grantReturnDN, grantBrowse }
+    }
+  }
+}
+}
